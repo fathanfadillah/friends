@@ -1,0 +1,50 @@
+<%
+=begin%>
+ <p id="notice"><%= notice %></p>  
+<%
+=end%>
+
+<%
+=begin%>
+ <div id="notice">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <%= notice %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div> 
+<%
+=end%>
+
+
+<%
+=begin%>
+ <% flash[:success] = "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+  "+"notice"+"
+  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+</div>" %>
+<%= flash[:success].try(:html_safe) %> 
+<%
+=end%>
+
+<p>
+  <strong>First name:</strong>
+  <%= @friend.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @friend.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @friend.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @friend.phone %>
+</p>
+
+<%= link_to 'Edit', edit_friend_path(@friend) %> |
+<%= link_to 'Back', friends_path %>
